@@ -54,7 +54,8 @@ export default function Dashboard() {
 
   const linkChannel = async () => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/youtube/auth-url`, {
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+      const res = await fetch(`${API_BASE}/youtube/auth-url`, {
         headers: {
           'Authorization': `Bearer ${(await supabase.auth.getSession()).data.session?.access_token}`
         }
