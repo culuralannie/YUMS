@@ -167,6 +167,17 @@ export default function Upload() {
           />
         </div>
 
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-slate-300">Tags (comma separated)</label>
+          <input
+            type="text"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+            className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 transition-all"
+            placeholder="gaming, tutorial, vlogs"
+          />
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="space-y-2">
             <label className="text-sm font-medium text-slate-300">Visibility</label>

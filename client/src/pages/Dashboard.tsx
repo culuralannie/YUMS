@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
-import { LayoutDashboard, Users, PlaySquare, CheckCircle2, AlertCircle, Clock } from 'lucide-react';
+import { Users, PlaySquare, CheckCircle2, AlertCircle, Clock } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 
 export default function Dashboard() {
