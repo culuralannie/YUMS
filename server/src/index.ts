@@ -19,9 +19,13 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-app.listen(PORT, () => {
-  console.log(`\n=================================================`);
-  console.log(`🚀 Backend Server running at http://localhost:${PORT}`);
-  console.log(`🌐 Frontend should be running at ${process.env.FRONTEND_URL || 'http://localhost:5173'}`);
-  console.log(`=================================================\n`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`\n=================================================`);
+    console.log(`🚀 Backend Server running at http://localhost:${PORT}`);
+    console.log(`🌐 Frontend should be running at ${process.env.FRONTEND_URL || 'http://localhost:5173'}`);
+    console.log(`=================================================\n`);
+  });
+}
+
+export default app;
